@@ -1,0 +1,16 @@
+.card {
+    height: 75vh;
+    width: 25vw;
+    margin: 2vh 2vw;
+    border-radius: 16px;
+}
+
+.blur {
+    height: 75vh;
+    width: 25vw;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}

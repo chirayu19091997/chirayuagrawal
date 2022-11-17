@@ -1,0 +1,51 @@
+.animationDTT {
+    position: relative;
+    animation: downtoTop 2s;
+}
+
+@keyframes downtoTop {
+    0% {
+        display: none;
+        bottom: -200px;
+    }
+
+    50% {
+        display: none;
+        bottom: -200px;
+    }
+
+    100% {
+        display: block;
+        bottom: 0;
+    }
+}
+
+.animationRTL {
+    position: relative;
+    animation: righttoLeft 1s;
+}
+
+@keyframes righttoLeft {
+    from {
+        right: -200px;
+    }
+
+    to {
+        right: 0px;
+    }
+}
+
+.animationLTR {
+    position: relative;
+    animation: lefttoRight 1s;
+}
+
+@keyframes lefttoRight {
+    from {
+        left: -200px;
+    }
+
+    to {
+        left: 0px;
+    }
+}
