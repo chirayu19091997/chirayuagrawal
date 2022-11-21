@@ -3,8 +3,18 @@ import "../styles/Home.css";
 import Card from "../components/Card/Card";
 import Lottie from "react-lottie";
 import * as HiAnimation from "../assets/HiAnimMan.json";
+import { Link } from "react-router-dom";
 
 const Home = () => {
+  const handleBounce = (letter) => {
+    if (!letter.classList.contains("b")) {
+      letter.classList.add("b");
+      setTimeout(() => {
+        letter.classList.remove("b");
+      }, 1000);
+    }
+  };
+
   return (
     <div>
       <div style={{ display: "flex", flexDirection: "row" }}>
@@ -15,12 +25,23 @@ const Home = () => {
         >
           <div style={{ padding: "10%" }} className={"animationDTT"}>
             <h1>
-              Hey, I'm Chirayu Agrawal, <br />A Fullstack Developer With 2 Years
-              of Experience.
+              Hey, I'm
+              <div style={{ display: "flex", whiteSpace: "break-spaces" }}>
+                {"Chirayu Agrawal".split("").map((letter, index) => (
+                  <div
+                    key={index}
+                    onMouseOver={(event) => {
+                      handleBounce(event.currentTarget);
+                    }}
+                    className="nameTag"
+                  >
+                    {letter}
+                  </div>
+                ))}
+              </div>
+              A Fullstack Developer With 2 Years of Experience.
             </h1>
             <br />
-            {/* <hr style={{ border: "1px solid black" }} />
-            <br /> */}
             <p
               style={{
                 fontSize: "20px",
@@ -50,19 +71,14 @@ const Home = () => {
                   preserveAspectRatio: "xMidYMid slice",
                 },
               }}
-              height={400}
-              width={400}
+              height={"100%"}
+              width={"100%"}
             />
           </div>
         </Card>
       </div>
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <Card
-          customStyles={{ width: "45vw" }}
-          customClassname="animationLTR"
-          isLeft
-          gradientShaders={{ right: "#1565C0", left: "#b92b27" }}
-        >
+        <Card customStyles={{ width: "45vw" }} customClassname="animationLTR">
           <div style={{ padding: "10%" }} className={"animationDTT"}>
             <h1>About</h1>
             <p style={{ fontSize: "20px" }}>
@@ -78,10 +94,12 @@ const Home = () => {
           isLeft
           customClassname="animationRTL"
         >
-          <div style={{ padding: "10%" }} className={"animationDTT"}>
-            <h1>Projects</h1>
-            <p style={{ fontSize: "20px" }}>Click Here to see my projects.</p>
-          </div>
+          <Link to="/projects">
+            <div style={{ padding: "10%" }} className={"animationDTT"}>
+              <h1>Projects</h1>
+              <p style={{ fontSize: "20px" }}>Click Here to see my projects.</p>
+            </div>
+          </Link>
         </Card>
       </div>
     </div>
