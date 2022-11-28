@@ -4,10 +4,17 @@ import Card from "../components/Card/Card";
 
 const Work = () => {
   return (
-    <div style={{ display: "flex", flexWrap: "wrap" }}>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       {Projects.map((item, index) => {
         return (
-          <Card customStyles={{ width: "45vw" }}>
+          <Card customStyles={{ width: "70vw", height: "80vh" }}>
             <div style={{ padding: "10%" }} className={"animationDTT"}>
               <div
                 style={{
